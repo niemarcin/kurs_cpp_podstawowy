@@ -1,11 +1,26 @@
 #pragma once
 
 int fibonacci_iterative(int sequence) {
-    // TODO: Your implementation goes here
-    return 0;
+    
+    if (sequence == 0) return 0;
+    if (sequence == 1) return 1;
+
+    int current = 0;
+    int previous = 1;
+    int prev_previous = 0;
+
+    for(int i = 2; i <= sequence; i++){
+        
+        current = previous + prev_previous;
+        prev_previous = previous;
+        previous = current;
+    }
+
+    return current;
 }
 
 int fibonacci_recursive(int sequence) {
-    // TODO: Your implementation goes here
-    return 0;
+    if (sequence == 0) return 0;
+    if (sequence == 1) return 1;
+    return fibonacci_recursive(sequence - 1) + fibonacci_recursive(sequence - 2);
 }
