@@ -1,8 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <list>
+#include <algorithm>
 
-// Implement createSortedList
-// add proper include :)
+std::list<int> createSortedList(std::vector<int> vecToSort) {
+    std::list<int> sortedList(vecToSort.begin(), vecToSort.end());
+    sortedList.sort();
+    return sortedList;
+}
 
 int main() {
     std::vector<int> vec{2, 3, 4, 1, 6, 5, 8, 7, 9, 0};
