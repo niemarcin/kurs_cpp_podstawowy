@@ -3,6 +3,12 @@
 #include <limits>
 
 int maxOfVector(const std::vector<int>& vec) {
-    // TODO: Implement me :)
-    return {};
+    int maxValue = INT32_MIN;
+    for (auto element : vec) {
+        if (element > maxValue) {
+            maxValue = element;
+        }
+    }
+
+    return maxValue;
 }
