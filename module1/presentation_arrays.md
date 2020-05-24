@@ -10,7 +10,7 @@
 
 ___
 
-## Wprowadzenie to tablic
+## Wprowadzenie do tablic
 
 # 🚃🚃🚃🚃🚃🚃🚃🚃🚃🚃
 
