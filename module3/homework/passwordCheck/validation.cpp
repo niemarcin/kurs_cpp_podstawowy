@@ -64,3 +64,11 @@ ErrorCode checkPasswordRules(const std::string& password) {
 
     return ErrorCode::Ok;
 }
+
+ErrorCode checkPassword(const std::string& passwordA, const std::string& passwordB) {
+    if (!(doesPasswordsMatch(passwordA, passwordB))) {
+        return ErrorCode::PasswordsDoesNotMatch;
+    }
+
+    return checkPasswordRules(passwordA);
+}
