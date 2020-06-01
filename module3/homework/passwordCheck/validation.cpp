@@ -22,7 +22,7 @@ std::string getErrorMessage(ErrorCode error) {
             errorMessage = "Password needs at least one uppercase letter";
         break;
         case ErrorCode::PasswordsDoesNotMatch :
-            errorMessage = "Passowrds does not match";
+            errorMessage = "Passwords does not match";
         break;
         default:
             errorMessage = "Unknown error code";
