@@ -2,12 +2,12 @@
 #include <vector>
 
 int addEven(const std::vector<int>& numbers) {
-    int suma = 0;
+    int result = 0;
 
     for (const auto & element : numbers){
-        if (element % 2 == 0) {
-        suma = suma + element;
+        if (!(element % 2)) {
+        result += element;
         }
     }
-    return suma;
+    return result;
 }
