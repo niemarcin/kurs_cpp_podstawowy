@@ -11,5 +11,5 @@ int NWW(int lhs, int rhs) {
     if (lhs==0 || rhs==0){
         return 0;
     }
-    return std::abs(lhs * rhs) / NWD(lhs,rhs);
+    return (static_cast<uint32_t>(lhs) * static_cast<uint32_t>(rhs)) / NWD(lhs,rhs);
 }
