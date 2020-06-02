@@ -28,6 +28,7 @@ std::string getErrorMessage(ErrorCode error) {
             errorMessage = "Unknown error code";
         break; 
     }
+	
     return errorMessage;
 }
 
