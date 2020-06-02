@@ -77,6 +77,5 @@ TEST(getErrorMessageTests, returnsErrorCodeAsString) {
     EXPECT_EQ(getErrorMessage(ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter), "Password needs at least one uppercase letter");
     EXPECT_EQ(getErrorMessage(ErrorCode::PasswordsDoesNotMatch), "Passwords does not match");
     EXPECT_EQ(getErrorMessage(static_cast<ErrorCode>(static_cast<int>(ErrorCode::PasswordsDoesNotMatch) + 1)), "Unknown error code");
-    
     // Add other tests for getErrorMessage if you wish
 }
