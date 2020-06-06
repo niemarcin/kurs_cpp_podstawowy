@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "vectorOfSharedPointers.hpp"
+#include "vectorFunctions.hpp"
 
 int main() {
     auto vec = generate(10);
