@@ -1,5 +1,5 @@
-#include <iostream>
 #include "vectorFunctions.hpp"
+#include <iostream>
 
 std::vector<std::shared_ptr<int>> generate(int count){
     std::vector<std::shared_ptr<int>> newVector;
@@ -9,26 +9,24 @@ std::vector<std::shared_ptr<int>> generate(int count){
     }
     return newVector;
 }
-void print(std::vector<std::shared_ptr<int>> newVector){
-    for (const auto element : newVector){
+void print(std::vector<std::shared_ptr<int>>& newVector){
+    for (const auto& element : newVector){
         std::cout << *element << "\n";
   }
 }
-void add10(std::vector<std::shared_ptr<int>> newVector){
-  for (const auto element : newVector){
-    if (element){
+void add10(std::vector<std::shared_ptr<int>>& newVector){
+  for (const auto& element : newVector){
+    if (element != nullptr)
      *element += 10;
-    }
-    std::cout << *element << "\n";
   }
 }
 void sub10(int* const ptr){
-  if (ptr){
+  if (ptr != nullptr){
     *ptr -= 10;
   }
 }
-void sub10 (std::vector<std::shared_ptr<int>> newVector){
-  for (const auto element : newVector){
+void sub10 (std::vector<std::shared_ptr<int>>& newVector){
+  for (const auto& element : newVector){
     sub10 (element.get());
   }
 }
