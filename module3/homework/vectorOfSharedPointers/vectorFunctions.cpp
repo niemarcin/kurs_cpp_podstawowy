@@ -16,7 +16,7 @@ void print(const std::vector<std::shared_ptr<int>>& newVector){
   }
 }
 
-void add10(std::vector<std::shared_ptr<int>>& newVector){
+void add10(const std::vector<std::shared_ptr<int>>& newVector){
   for (const auto& element : newVector){
     if (element != nullptr){
      *element += 10;
@@ -30,7 +30,7 @@ void sub10(int* const ptr){
   }
 }
 
-void sub10 (std::vector<std::shared_ptr<int>>& newVector){
+void sub10 (const std::vector<std::shared_ptr<int>>& newVector){
   for (const auto& element : newVector){
     sub10 (element.get());
   }
