@@ -9,22 +9,27 @@ std::vector<std::shared_ptr<int>> generate(int count){
     }
     return newVector;
 }
-void print(std::vector<std::shared_ptr<int>>& newVector){
+
+void print(const std::vector<std::shared_ptr<int>>& newVector){
     for (const auto& element : newVector){
         std::cout << *element << "\n";
   }
 }
+
 void add10(std::vector<std::shared_ptr<int>>& newVector){
   for (const auto& element : newVector){
-    if (element != nullptr)
+    if (element != nullptr){
      *element += 10;
+    }
   }
 }
+
 void sub10(int* const ptr){
   if (ptr != nullptr){
     *ptr -= 10;
   }
 }
+
 void sub10 (std::vector<std::shared_ptr<int>>& newVector){
   for (const auto& element : newVector){
     sub10 (element.get());
