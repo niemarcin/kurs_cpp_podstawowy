@@ -18,14 +18,14 @@ void print(const std::vector<std::shared_ptr<int>>& newVector){
 
 void add10(const std::vector<std::shared_ptr<int>>& newVector){
     for (const auto& element : newVector){
-        if (element != nullptr){
+        if (element){
             *element += 10;
         }
     }
 }
 
 void sub10(int* const ptr){
-    if (ptr != nullptr){
+    if (ptr){
         *ptr -= 10;
     }
 }
