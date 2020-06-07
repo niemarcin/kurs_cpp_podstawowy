@@ -47,7 +47,7 @@ ___
   * `empty()`
 * <!-- .element: class="fragment fade-in" --> dostęp do elementu dla określonego klucza
   * `operator[key]`
-* <!-- .element: class="fragment fade-in" --> dodanie parę (klucz, wartość) do mapy o ile taka para jeszcze w niej nie występuje
+* <!-- .element: class="fragment fade-in" --> dodanie pary (klucz, wartość) do mapy o ile taka para jeszcze w niej nie występuje
   * `insert({key, value})`
 
 [Dokumentacja na cppreference.org](https://en.cppreference.com/w/cpp/container/map)
