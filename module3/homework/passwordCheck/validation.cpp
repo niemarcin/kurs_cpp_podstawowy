@@ -8,25 +8,25 @@ std::string getErrorMessage(ErrorCode error) {
     switch (error) {
         case ErrorCode::Ok :
             errorMessage = "OK";
-        break;
+            break;
         case ErrorCode::PasswordNeedsAtLeastNineCharacters :
             errorMessage = "Password needs at least nine characters";
-        break;
+            break;
         case ErrorCode::PasswordNeedsAtLeastOneNumber :
             errorMessage = "Password needs at least one number";
-        break;
+            break;
         case ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter :
             errorMessage = "Password needs at least one special character";
-        break;
+            break;
         case ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter :
             errorMessage = "Password needs at least one uppercase letter";
-        break;
+            break;
         case ErrorCode::PasswordsDoesNotMatch :
             errorMessage = "Passwords does not match";
-        break;
+            break;
         default:
             errorMessage = "Unknown error code";
-        break; 
+            break; 
     }
 	
     return errorMessage;
@@ -37,19 +37,19 @@ bool doesPasswordsMatch(const std::string& passwordA, const std::string& passwor
 }
 
 ErrorCode checkPasswordRules(const std::string& password) {
-    if (password.length() < 9) {
+    if (password.length() < minPasswordLength) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
 
-    if (!(std::any_of(password.begin(), password.end(), [](unsigned char c) {return std::isupper(c); }))) {
+    if (std::none_of(password.begin(), password.end(), ::isupper)) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
 
-    if (!(std::any_of(password.begin(), password.end(), [](unsigned char c) {return std::ispunct(c); }))) {
+    if (std::all_of(password.begin(), password.end(), ::isalnum)) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
 
-    if (!(std::any_of(password.begin(), password.end(), [](unsigned char c) {return std::isdigit(c); }))) {
+    if (std::none_of(password.begin(), password.end(), ::isdigit)) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
 
