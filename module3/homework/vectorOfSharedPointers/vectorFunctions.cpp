@@ -3,9 +3,11 @@
 
 std::vector<std::shared_ptr<int>> generate(int count){
     std::vector<std::shared_ptr<int>> newVector;
-    newVector.reserve(count);
-    for (size_t i = 0; i < count; ++i){
-        newVector.emplace_back(std::make_shared<int>(i));
+    if (count >= 0) {
+        newVector.reserve(count);
+        for (size_t i = 0; i < count; ++i){
+            newVector.emplace_back(std::make_shared<int>(i));
+        }
     }
     return newVector;
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include <iostream>
+#include <string>
 
 enum class ErrorCode {
     Ok,
@@ -10,7 +10,7 @@ enum class ErrorCode {
     PasswordsDoesNotMatch
 };
 
-const size_t minPasswordLength = 9;
+constexpr size_t minPasswordLength = 9;
 
 std::string getErrorMessage(ErrorCode error);
 bool doesPasswordsMatch(const std::string& passwordA, const std::string& passwordB);
